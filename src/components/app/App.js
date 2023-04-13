@@ -1,22 +1,22 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import AppHeader from "../appHeader/AppHeader";
 import RandomChar from "../randomChar/RandomChar";
 import CharList from "../charList/CharList";
-import CharInfo from "../charInfo/CharInfo";
-import PokeServise from "../../services/MarvelService";
+import CharInfo from "../charInfo/CharInfo"; 
 import Char from "../../resources/img/charakter.png"
+import Squirtel from "../../resources/img/Squirtle.png"
 
 
 
 const App = () => {
-    const pokeServise = new PokeServise();
+    
     const [charInfo, setCharInfo] = useState({
-        name: '',
-        image: null ,
+        name: 'Tap on pokemon card to learn more...',
+        image: Squirtel ,
         abilities: [],
         types:[] 
     })
-    
+   
     const showCharInfo = async (id) => {
         const baseURL = 'http://pokeapi.co/api/v2/'
         const res = await fetch(`${baseURL}pokemon/${id}/`);
@@ -32,15 +32,17 @@ const App = () => {
     
     }
 
-    
-
     return (
         <div className="app">
-            <AppHeader/>
+            <AppHeader />
             <main>
                 <RandomChar/>
                 <div className="char__content">
-                    <CharList charInfo = {charInfo} setCharInfo={setCharInfo} showCharInfo = {showCharInfo}  />
+                    <CharList 
+                    charInfo = {charInfo} 
+                    setCharInfo={setCharInfo} 
+                    showCharInfo = {showCharInfo}
+                      />
                     <CharInfo
                     charInfo = {charInfo}
                      />
