@@ -26,7 +26,7 @@ const CharList = ({showCharInfo}) => {
     }
     
     const getAllCharacters = async (limit = 9, offset = 0) => {
-        let baseURL = `http://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+        let baseURL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
        
         const res = await fetch(baseURL)
         const data = await res.json();

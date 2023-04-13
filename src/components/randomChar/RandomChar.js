@@ -15,7 +15,7 @@ const RandomChar = () => {
    
     const updateChar = async(id) => {
         id = Math.floor(Math.random() * (1000 - 1 + 1) + 1);
-        const baseURL = 'http://pokeapi.co/api/v2/'
+        const baseURL = 'https://pokeapi.co/api/v2/'
         const res = await fetch(`${baseURL}pokemon/${id}/`);
         const data = await res.json();
         let img = data.sprites.other.dream_world.front_default || undef;

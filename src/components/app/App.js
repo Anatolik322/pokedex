@@ -18,7 +18,7 @@ const App = () => {
     })
    
     const showCharInfo = async (id) => {
-        const baseURL = 'http://pokeapi.co/api/v2/'
+        const baseURL = 'https://pokeapi.co/api/v2/'
         const res = await fetch(`${baseURL}pokemon/${id}/`);
         const data = await res.json();
         console.log(data.stats[0].stat.name);
