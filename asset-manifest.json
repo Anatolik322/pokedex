@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/pokedex/static/css/main.3b6dbe5b.css",
-    "main.js": "/pokedex/static/js/main.9392b6d5.js",
+    "main.css": "/pokedex/static/css/main.85a51734.css",
+    "main.js": "/pokedex/static/js/main.8e30c828.js",
     "static/media/charakter.png": "/pokedex/static/media/charakter.77edfc8077fd53bdffa8.png",
+    "static/media/pokemongo.gif": "/pokedex/static/media/pokemongo.89d5ed459b87ba7c5b1e.gif",
     "static/media/undef.jpg": "/pokedex/static/media/undef.3d08d413d586365f3468.jpg",
     "static/media/Pokeball.png": "/pokedex/static/media/Pokeball.ac75168b2b77f10dc102.png",
     "static/media/pikachu.png": "/pokedex/static/media/pikachu.7874df23cf86d3c88532.png",
     "static/media/Squirtle.png": "/pokedex/static/media/Squirtle.cc57019380e34f9db018.png",
     "index.html": "/pokedex/index.html",
-    "main.3b6dbe5b.css.map": "/pokedex/static/css/main.3b6dbe5b.css.map",
-    "main.9392b6d5.js.map": "/pokedex/static/js/main.9392b6d5.js.map"
+    "main.85a51734.css.map": "/pokedex/static/css/main.85a51734.css.map",
+    "main.8e30c828.js.map": "/pokedex/static/js/main.8e30c828.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b6dbe5b.css",
-    "static/js/main.9392b6d5.js"
+    "static/css/main.85a51734.css",
+    "static/js/main.8e30c828.js"
   ]
 }
