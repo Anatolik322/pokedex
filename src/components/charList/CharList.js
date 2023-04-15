@@ -1,31 +1,27 @@
 import './charList.scss';
 import React, {useState,useEffect} from 'react';
+import Loader from "../../resources/img/pokemongo.gif"
 
 const CharList = ({showCharInfo}) => {
 
     const [charList, setCharList] = useState([]);
-    const [listQ, setListQ] = useState(9);
+    const [offset, setOffset] = useState(0);
+    const [limit, setLimit] = useState(12)
     let classList = 'char__item'
 
     let btn =
-    <button className="button button__main button__long" onClick={() => {
-        getAllCharacters(21);
-        setListQ(21)}}>
+    <button className="button button__main button__long"  onClick={ () => {
+        handleClick();
+        console.log(offset)
+        getAllCharacters(limit+12, offset);
+       }}>
         <div className="inner">load more</div>
     </button>;
 
-    if(listQ > 9){
-        btn =
-        <button
-         className="button button__main button__long" 
-         onClick={() => {
-            getAllCharacters(9); 
-            setListQ(9)}}>
-            <div className="inner">show less</div>
-        </button>
+    const handleClick = () => {
+        setLimit(limit+12);
     }
-    
-    const getAllCharacters = async (limit = 9, offset = 0) => {
+    const getAllCharacters = async (limit = 12, offset = 0) => {
         let baseURL = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
        
         const res = await fetch(baseURL)
@@ -79,6 +75,7 @@ const CharList = ({showCharInfo}) => {
             <ul className="char__grid">
                 {charList}
             </ul>
+   
             {btn}
         </div>
     )
