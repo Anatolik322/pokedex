@@ -5,7 +5,7 @@ const AppHeader = () => {
         <header className="app__header">
             <h1 className="app__title">
                 <a href="#">
-                    <span>Pocemon</span> information portal
+                    <span>Pokemon</span> information portal
                 </a>
             </h1> 
         </header>

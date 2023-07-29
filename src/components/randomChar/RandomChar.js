@@ -18,7 +18,7 @@ const RandomChar = () => {
         const baseURL = 'https://pokeapi.co/api/v2/'
         const res = await fetch(`${baseURL}pokemon/${id}/`);
         const data = await res.json();
-        let img = data.sprites.other.dream_world.front_default || undef;
+        let img = data.sprites.other.home.front_default || undef;
 
         setChar({
             name: data.name,
