@@ -2,12 +2,14 @@ import './charList.scss';
 import React, {useState,useEffect} from 'react';
 import Loader from "../../resources/img/pokemongo.gif"
 import Card from '../card/Card';
+import CharInfo from '../charInfo/CharInfo';
 import { useGetPokemonsQuery, useLazyGetPokemonsQuery } from '../../redux/pokeApi';
 
 const CharList = () => {
     let pokeData = [];
     const [offset, setOffset] = useState(0);
     const [limit, setLimit] = useState(9);
+    const [name, setName] = useState('bulbasaur')
    
     let btn =
     <button className="button button__main button__long"  onClick={ (e) => {
@@ -33,12 +35,13 @@ const CharList = () => {
                     isLoading || isFetching ? <h1>Loading....</h1>:
                     isSuccess && data.name.map(e => {
                         return(   
-                            <Card name={e.name}/>
+                            <Card name={e.name} onClick={() => setName(e.name)}/>
                         )
                     })
                 }
             </ul>
             {btn}
+            <CharInfo name = {name}></CharInfo>
         </div>
     )
 }

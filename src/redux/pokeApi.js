@@ -14,8 +14,9 @@ export const pokeApi = createApi({
         getPokemonByName: build.query({
             query: (name) => `pokemon/${name}`,
             transformResponse: res => ({
-                img: res.sprites.other.dream_world.front_default
-
+                img: res.sprites.other.dream_world.front_default,
+                types: [res.types[0], res.types[1]],
+                stats: res.stats
             })
         }),
     })

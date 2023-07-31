@@ -1,17 +1,18 @@
 import './charInfo.scss';
+import { useGetPokemonByNameQuery } from '../../redux/pokeApi';
 
-const CharInfo = ({charInfo}) => {
-    
+const CharInfo = ({name}) => {
+    const {isSuccess, isLoading, data} = useGetPokemonByNameQuery(name)
     return (
         <div className="char__info">
             <div className="char__basics">
-                <img src={charInfo.image} alt={charInfo.name}/>
+                <img src={isSuccess ? data.img: null} />
                 <div>
-                    <div className="char__info-name">{charInfo.name}</div>
+                    <div className="char__info-name">{name}</div>
                     <div className="char__btns">
-                        {charInfo.types.map(item => {
+                        {isSuccess && data.types.map(item => {
                             return(
-                                <a  rel="noreferrer" target="_blank" className="button button__main">
+                                <a  rel="noreferrer" target="_blank" className="button button__main" key={Math.random()}>
                                     <div className="inner">{item.type.name}</div>
                                 </a>
                             )
@@ -21,9 +22,9 @@ const CharInfo = ({charInfo}) => {
             </div>
             <ul className="char__comics-list">
                 {
-                    charInfo.abilities.map(item => {
+                    isSuccess && data.stats.map(item => {
                         return(
-                            <li className="char__comics-item" key={item}>
+                            <li className="char__comics-item" key={Math.random()}>
                                 {item.stat.name}: {item.base_stat}
                             </li>
                         )
