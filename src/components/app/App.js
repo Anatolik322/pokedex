@@ -2,7 +2,7 @@ import React, { useState} from "react";
 import AppHeader from "../appHeader/AppHeader";
 import RandomChar from "../randomChar/RandomChar";
 import CharList from "../charList/CharList";
-import CharInfo from "../charInfo/CharInfo"; 
+import '../../style/main.css'
 import Char from "../../resources/img/charakter.png"
 import Squirtel from "../../resources/img/Squirtle.png"
 
@@ -39,10 +39,7 @@ const App = () => {
             <AppHeader />
             <main>
                 <RandomChar/>
-                <div className="char__content">
-                    <CharList />
-                  
-                </div>
+                <CharList />
                 <img className="bg-decoration" src={Char} alt="vision"/>
             </main>
         </div>

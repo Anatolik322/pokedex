@@ -1,8 +1,14 @@
 import './charInfo.scss';
 import { useGetPokemonByNameQuery } from '../../redux/pokeApi';
+import { useEffect, useState } from 'react';
 
 const CharInfo = ({name}) => {
-    const {isSuccess, isLoading, data} = useGetPokemonByNameQuery(name)
+    const [charName, setCharName] = useState(name);
+    useEffect(() => {
+        console.log('reload')
+        setCharName(name);
+    }, [name])
+    const {isSuccess, isLoading, data} = useGetPokemonByNameQuery(charName)
     return (
         <div className="char__info">
             <div className="char__basics">

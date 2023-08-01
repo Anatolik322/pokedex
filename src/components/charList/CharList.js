@@ -39,8 +39,9 @@ const CharList = () => {
                         )
                     })
                 }
+                {btn}
             </ul>
-            {btn}
+            
             <CharInfo name = {name}></CharInfo>
         </div>
     )
