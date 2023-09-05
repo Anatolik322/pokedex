@@ -1,8 +1,8 @@
 
 # To run my app:
 
-## 1. Run the command nmp install (npm i) in the terminal
-## 2. Run the command nmp run start
+## 1. Run the command npm install (npm i) in the terminal
+## 2. Run the command npm run start
 to start for development 
 
 Runs the app in the development mode.\
